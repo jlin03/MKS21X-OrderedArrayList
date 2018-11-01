@@ -23,6 +23,7 @@ public class NoNullArrayList<E> extends ArrayList<E> {
       super.add(index,thing);
     }
 
+
   }
 
 

@@ -10,6 +10,7 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 	public boolean add(E thing) {
 		if(this.size() == 0) {
 			super.add(0, thing);
+			return true;
 		}
 		else {
 			for(int i = 0; i < this.size(); i++) {
@@ -21,17 +22,19 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 					super.add(thing);
 				}
 			}
+			return true;
 		}
 	}
 	
-	public boolean add(int index, E thing) {
+	public void add(int index, E thing) {
 		add(thing);
 	}
 	
-	public void set(int index, E thing) {
+	public E set(int index, E thing) {
 		remove(index);
+		remove(this.size() - 1);
 		add(thing);
-		
+		return thing;
 	}
 	
 	
