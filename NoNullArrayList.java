@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class NoNullArrayList<T> extends ArrayList<T> {
+public class NoNullArrayList<E> extends ArrayList<E> {
   public NoNullArrayList() {
     super(0);
   }
@@ -9,14 +9,16 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     super(cap);
   }
 
-  public void add(T thing) {
+  public boolean add(E thing) {
     if(thing != null) {
       super.add(thing);
+	  return true;
     }
+	return false;
 
   }
 
-  public void add(int index, T thing) {
+  public void add(int index, E thing) {
     if(thing != null) {
       super.add(index,thing);
     }
