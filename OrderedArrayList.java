@@ -24,8 +24,15 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 		}
 	}
 	
+	public boolean add(int index, E thing) {
+		add(thing);
+	}
 	
-	
+	public void set(int index, E thing) {
+		remove(index);
+		add(thing);
+		
+	}
 	
 	
 }
