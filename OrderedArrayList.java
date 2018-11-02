@@ -32,9 +32,7 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 	}
 
 	public E set(int index, E thing) {
-		System.out.println(this.size());
 		remove(index);
-		System.out.println(this.size());
 		this.add(thing);
 		return thing;
 	}
