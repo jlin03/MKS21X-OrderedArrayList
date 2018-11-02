@@ -2,14 +2,15 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 	public OrderedArrayList() {
 		super(0);
 	}
-	
+
 	public OrderedArrayList(int cap) {
 		super(cap);
 	}
-	
+
 	public boolean add(E thing) {
+		int initsize = this.size();
 		if(this.size() == 0) {
-			super.add(0, thing);
+			super.add(thing);
 			return true;
 		}
 		else {
@@ -18,24 +19,25 @@ public class OrderedArrayList<E extends Comparable<E>> extends NoNullArrayList<E
 					super.add(i, thing);
 					break;
 				}
-				if(i == this.size() - 1) {
-					super.add(thing);
-				}
+			}
+			if(initsize == this.size()) {
+				super.add(thing);
 			}
 			return true;
 		}
 	}
-	
+
 	public void add(int index, E thing) {
-		add(thing);
+		this.add(thing);
 	}
-	
+
 	public E set(int index, E thing) {
+		System.out.println(this.size());
 		remove(index);
-		remove(this.size() - 1);
-		add(thing);
+		System.out.println(this.size());
+		this.add(thing);
 		return thing;
 	}
-	
-	
+
+
 }

@@ -6,7 +6,7 @@ public class Driver {
 	a.add(1, "a");
     System.out.println(a.get(0) + a.get(1) + a.get(2));
 	//"xas"
-	
+
 	OrderedArrayList<String> b = new OrderedArrayList<String>();
 	b.add("b");
 	b.add("a");
@@ -16,7 +16,7 @@ public class Driver {
 	b.set(0,"d");
 	System.out.println(b.get(0) + b.get(1) + b.get(2));
 	//"bcd"
-	
+
   }
 
 
